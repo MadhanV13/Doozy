@@ -1,24 +1,21 @@
-// Project: Doozy - Simple Login Screen in Flutter
-
 import 'package:flutter/material.dart';
-
-import 'screen/register.dart'; // This imports the register screen
+import 'register.dart';
 
 
 void main() {
-  runApp(const DoozyApp());
+  runApp(const MyApp());
 }
 
-class DoozyApp extends StatelessWidget {
-  const DoozyApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Doozy Login',
+      title: 'Login Page',
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.blue,
       ),
       home: const LoginPage(),
     );
@@ -42,12 +39,12 @@ class _LoginPageState extends State<LoginPage> {
       String username = _usernameController.text;
       String password = _passwordController.text;
 
-      // TODO: Replace this with real authentication logic
+      // TODO: Replace this with actual login logic
       print('Username: $username');
       print('Password: $password');
 
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Welcome to Doozy! Logging in...')),
+        const SnackBar(content: Text('Logging in...')),
       );
     }
   }
@@ -55,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Doozy Login')),
+      appBar: AppBar(title: const Text('Login Page')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -63,25 +60,26 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextFormField(
-                controller: _usernameController,
-                decoration: const InputDecoration(labelText: 'Username'),
-                validator: (value) =>
-                value == null || value.isEmpty ? 'Enter your username' : null,
-              ),
-              const SizedBox(height: 16),
-              TextFormField(
-                controller: _passwordController,
-                obscureText: true,
-                decoration: const InputDecoration(labelText: 'Password'),
-                validator: (value) =>
-                value == null || value.isEmpty ? 'Enter your password' : null,
-              ),
-              const SizedBox(height: 32),
-              ElevatedButton(
-                onPressed: _login,
-                child: const Text('Login'),
-              ),
+
+                TextFormField(
+                  controller: _usernameController,
+                  decoration: const InputDecoration(labelText: 'Username'),
+                  validator: (value) =>
+                  value == null || value.isEmpty ? 'Enter your username' : null,
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _passwordController,
+                  obscureText: true,
+                  decoration: const InputDecoration(labelText: 'Password'),
+                  validator: (value) =>
+                  value == null || value.isEmpty ? 'Enter your password' : null,
+                ),
+                const SizedBox(height: 32),
+                ElevatedButton(
+                  onPressed: _login,
+                  child: const Text('Login'),
+                ),
               TextButton(
                 onPressed: () {
                   Navigator.push(
@@ -91,7 +89,9 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 child: const Text("Don't have an account? Register"),
               ),
+
             ],
+
 
           ),
         ),
