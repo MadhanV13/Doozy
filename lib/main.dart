@@ -1,6 +1,8 @@
 // Project: Doozy - Simple Login Screen in Flutter
 
+import 'package:doozy/provider/loginprovider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'screen/register.dart'; // This imports the register screen
 
@@ -14,13 +16,19 @@ class DoozyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Doozy Login',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
+    return MultiProvider(
+      providers:[
+        ChangeNotifierProvider(create: (_) => LoginProvider()),
+        //ChangeNotifierProvider(create: (_) => TaskProvider()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Doozy Login',
+        theme: ThemeData(
+          primarySwatch: Colors.indigo,
+        ),
+        home: const LoginPage(),
       ),
-      home: const LoginPage(),
     );
   }
 }

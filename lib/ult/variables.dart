@@ -1,0 +1,1 @@
+class variables{ static String username= '';}
