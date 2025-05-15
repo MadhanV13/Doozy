@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "845295045833",
+    "project_id": "doozy-c64ca",
+    "storage_bucket": "doozy-c64ca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845295045833:android:e4e6d2a29333ba1cc21118",
+        "android_client_info": {
+          "package_name": "com.example.doozy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSVzrEWx6gB_FBRj5tWuFFegbtPMqu1j0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
